@@ -1,9 +1,3 @@
-//Header
-
-var header = require('../header.js');
-console.log(header.display("Wendy", "Portillo", "Exercise 1.3"));
-console.log('\n');
-
 /*
 ============================================
 ; Title:  Portillo-exercise-1.3
@@ -13,6 +7,13 @@ console.log('\n');
 ; Description:  Assignment 1.3
 ;===========================================
 */
+
+//Header
+
+var header = require('../header.js');
+console.log(header.display("Wendy", "Portillo", "Exercise 1.3"));
+console.log('\n');
+
 
 
 var url = require('url');

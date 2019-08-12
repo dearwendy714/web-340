@@ -3,7 +3,7 @@
 ; Title:  Portillo-server.js
 ; Author: Professor Krasso
 ; Date:   11 August 2019
-; Modified By: Wendy Portillo 
+; Modified By: Wendy Portillo
 ; Description: creating my first server
 ;===========================================
 */
@@ -11,7 +11,7 @@
 //Header
 
 var header = require('../header.js');
-console.log(header.display("Wendy", "Portillo", "Exercise 1.3"));
+console.log(header.display("Wendy", "Portillo", "Exercise 1.5"));
 console.log('\n');
 
 
