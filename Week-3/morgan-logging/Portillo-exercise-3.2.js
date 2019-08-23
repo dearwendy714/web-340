@@ -1,12 +1,12 @@
 //Header
 
 var header = require('../../header.js');
-console.log(header.display("Wendy", "Portillo", "Exercise 1.4"));
+console.log(header.display("Wendy", "Portillo", "Exercise 3.2"));
 console.log('\n');
 
 /*
 ============================================
-; Title:  Portillo-exercise-1.4
+; Title:  Portillo-exercise-3.2
 ; Author: Professor Krasso
 ; Date:   21 August 2019
 ; Modified By: Wendy Portillo

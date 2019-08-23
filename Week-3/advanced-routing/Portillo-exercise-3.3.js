@@ -6,7 +6,7 @@ console.log('\n');
 
 /*
 ============================================
-; Title:  Portillo-exercise-1.4
+; Title:  Portillo-exercise-3.3
 ; Author: Professor Krasso
 ; Date:   21 August 2019
 ; Modified By: Wendy Portillo
