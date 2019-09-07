@@ -1,7 +1,7 @@
 /*
 ============================================
 ; Title:  header.js
-; Author: Wendy Portillo 
+; Author: Wendy Portillo
 ; Date:   11 August 2019
 ; Description: Displays a formatted header
 ;===========================================
@@ -9,7 +9,7 @@
 
 /**
 * Params: firstName, lastName, assignment
-* Response: output 
+* Response: output
 * Description: Returns a well-formatted string header
 */
 exports.display = function (firstName, lastName, assignment) {
