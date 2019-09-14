@@ -1,0 +1,44 @@
+<% include header %>
+<% include navbar %>
+
+<h2>Employee Records</h2><br>
+
+<section class='employee-records'>
+    <p>
+        Find all employee information listed below:
+    </p>
+</section>
+
+<div role = 'main' class = 'container'>
+    <% if (employees.length) { %>
+    <table class='table bg-primary table-striped table-hover'>
+        <thead>
+        <tr>
+            <th class='text-white'> First Name</th>
+            <th class='text-white'> Last Name</th>
+            <th class='text-white'> Email</th>
+            <th class='text-white'> Employee ID</th>
+            <th class='text-white'> View Entry </th>
+        </tr>
+        </thead>
+        <tbody>
+            <% employees.forEach(function(entry) { %>
+                <tr>
+                    <td><%= entry.first %></td>
+                    <td><%= entry.last %></td>
+                    <td><%= entry.email %></td>
+                    <td><%= entry.ID %></td>
+                    <td><a style='color: white' href='/view/<%= entry.first %>'</a> View Entry Here</a></td>
+
+                </tr>
+           <% }) %>
+        </tbody>
+        </table>
+        <% } else { %> There are no entries! <a href = '/new'>Add One!</a>
+        <% } %>
+    </div>
+</div>
+
+
+    <% include footer %>
+    <% include script %>
