@@ -1,27 +1,32 @@
+
+<!-- Header -->
 <% include header %>
+
 <% include navbar %>
+<body>
+<!-- Landing page div -->
+<div id="landing">
 
-<div role="main" class="home">
-
-    <br/>
-
-    <h2 class = 'homeh2'><%= title %>!</h2>
-
-</div>
-
-<section class='home-1'>
-    <div>
-
-       <h3>Access Your Employee's Records</h3>
-       <button class='home-btn' onClick='location.href= "http://localhost:3000/list"'>Click Here</button>
-
-       <br/>
-
-       <h3>Add Employee Records</h3>
-       <button class='home-btn' onClick='location.href= "http://localhost:3000/new"'>Click Here</button>
-
+    <div class="logoBackground">
+      <h1 class="logo"><%= message %>!</h1>
     </div>
-</section>
 
+  </div> <!--End of landing div-->
+
+<div role="main" class="container">
+
+    <br/><br/>
+
+    <h2><%= headingTitle %></h2>
+    <p>/p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu libero est. Praesent non mi eros. Etiam ac erat justo. Praesent efficitur ultrices sem, vel pretium risus gravida ac. Morbi posuere justo purus, eu aliquam massa hendrerit sed. Sed mauris justo, fermentum eget justo finibus, blandit pharetra urna. Aenean tincidunt elementum lacinia. Nullam elementum pretium sapien in rutrum. Ut sit amet sem in arcu condimentum porttitor ultrices id ligula. Nulla quis egestas dolor. Cras justo nunc, pharetra et sem id, bibendum accumsan quam. Phasellus vestibulum arcu vel bibendum sagittis. Aliquam eu tortor tincidunt, ultrices massa a, porta mauris. Sed quis justo metus.</p>
+
+    <p>Nam dignissim dapibus diam, at iaculis risus faucibus ac. Vestibulum fermentum ligula in interdum iaculis. Integer at sem libero. Nullam suscipit dui ipsum, quis sodales diam vestibulum varius. Phasellus eu aliquet lorem. Donec ullamcorper fringilla lacus non venenatis. Nunc ante leo, pellentesque vitae eros et, vehicula convallis lectus. Aliquam ac ex eget magna semper interdum vitae quis urna.</p>
+
+    <p>Praesent tempus sapien sem, sit amet malesuada tellus pretium ut. Morbi velit ligula, congue nec sollicitudin vel, viverra nec leo. Nam ac viverra metus, pellentesque laoreet nisl. Vivamus accumsan commodo auctor. Cras lobortis ultrices neque, sit amet sollicitudin nisl bibendum sed. Maecenas et nibh ex. Sed pulvinar sapien dui, facilisis accumsan augue tempus eu. Cras placerat commodo efficitur. Morbi eleifend posuere ante, at lobortis velit auctor sed. Nullam ac sapien imperdiet, congue nulla vitae, malesuada urna. Curabitur dolor sem, feugiat id velit ac, varius semper eros. Morbi quis ligula ac purus hendrerit auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+</div>
+</body>
 <% include footer %>
-<% include script %>
+<% include scripts %>
+
+<!-- Footer -->
+<% include footer %>
