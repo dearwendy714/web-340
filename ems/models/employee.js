@@ -1,8 +1,8 @@
 /*
 ============================================
 ; Title:  employees.js
-; Author: Ethan Townsend
-; Date:   4 April 2019
+; Author: Wendy Portillo
+; Date:   23 September 2019
 ; Description: File for the employee database model
 ;===========================================
 */
