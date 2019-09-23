@@ -1,0 +1,9 @@
+{
+  "name": "hello-world",
+  "author": "Wendy Portillo",
+  "private": true,
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
