@@ -10,12 +10,21 @@ var app = express();
 
 var mongoose = require("mongoose");
 
+var helmet = require("helmet");
+
+var cookieParser = require("cookie-parser");
+
+var csrf = require("csurf");
+
 var Employees = require("./models/employee")
 
-var mongoDB = "mongodb+srv://misswendy:302Berkeley@ems-mqmxj.mongodb.net/test?retryWrites=true&w=majority";
+var csrfProtection =csrf({cookie:true});
+
+var mongoDB = "mongodb+srv://dearwendy714:302Berkeley@cluster0-mqmxj.mongodb.net/test?retryWrites=true&w=majority";
 
 mongoose.connect(mongoDB, {
-useNewUrlParser:true
+useNewUrlParser:true,
+useUnifiedTopology: true
 });
 
 mongoose.Promise =global.Promise;
@@ -34,6 +43,17 @@ db.once("open", function() {
 var app = express();
 
 app.use(logger("short"));
+
+app.use(helmet.xssFilter());
+
+app.use(cookieParser());
+app.use(csrfProtection);
+app.use(function(request, response, next) {
+  var token = request.csrfToken();
+  response.cookie("XSRF-TOKEN", token);
+  response.locals.csrfToken = token;
+  next();
+});
 
 // model
 
@@ -59,6 +79,62 @@ app.get("/", function (request, response) {
     });
 
 });
+app.get("/new", function (request, response) {
+
+  response.render("new", {
+
+      title: "New Employees"
+
+  });
+
+});
+app.post('/process', function(req, res) {
+   console.log(req.body);
+  if (!req.body.firstName) {
+      res.status(400).send('Entries must have a first name.');
+      return;
+  } else if(!req.body.lastName) {
+      res.status(404).send('Entries must have a last name.')
+      return;
+  } else if(!req.body.email) {
+      res.status(400).send('Entries must have an email.')
+      return;
+  } else if(!req.body.id) {
+      res.status(400).send('Entries must have an employee ID.')
+      return;
+  }
+
+  // get the request's form data
+  const firstName = req.body.firstName;
+  console.log(firstName);
+  const lastName = req.body.lastName;
+  console.log(lastName)
+  const email = req.body.email;
+  console.log(email)
+  const ID = req.body.id;
+  console.log(ID)
+
+  // create a employee model
+  let employees = new Employees({
+    first: firstName,
+    last: lastName,
+    email: email,
+    ID: ID
+
+  });
+
+  // save
+  employees.save(function(err) {
+    if (err) {
+      console.log(err);
+      throw err;
+    } else {
+      console.log(firstName + ' saved successfully!');
+      res.redirect('/');
+    }
+  });
+});
+
 
 
 
