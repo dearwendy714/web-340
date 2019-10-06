@@ -3,9 +3,13 @@
 ; Title:  app.js
 ; Author: Wendy Portillo
 ; Date:   2 October 2019
-; Description: Demonstrates EJS layouts.
+; Description: Demonstrates how to create an
+;			   employee management system using
+;			   Express, EJS, and MongoDB.
 ;===========================================
 */
+
+// Required modules
 
 var express = require('express');
 var http = require('http');
@@ -81,11 +85,46 @@ app.get('/', function(request, response) {
     title: 'Home page'
   });
 });
+
+app.get('/about', function(request, response) {
+  response.render('about', {
+    title: 'About',
+    message: "blah"
+  });
+});
+app.get('/contact', function(request, response) {
+  response.render('contact', {
+    title: 'Contact Us',
+    message: "blah"
+  });
+});
+
+// Post request for the new employee creation page
 app.get('/new', function(request, response) {
   response.render('new', {
     title: 'New Employees'
   });
 });
+// Render a response to the user
+app.get('/list', function(req, res){
+  Employees.find({}, function(err, employees){
+      if(err){ throw err;
+      } else {
+      res.render('list', {
+          title: 'EMS | Employee Data',
+          employees: employees
+      })
+  };
+});
+});
+app.get('/view', function(request, response) {
+  response.render('view', {
+    title: 'View of Employees'
+  });
+});
+
+
+// Post request for the new employee creation page
 app.post('/process', function(req, res) {
   if (!req.body.firstName) {
     res.status(400).send('Entries must have a first name.');
@@ -130,7 +169,7 @@ app.post('/process', function(req, res) {
     }
   });
 });
-
+// Get request for the index page
 app.get('/view/:queryName', function(req, res) {
   const queryName = req.params['queryName'];
 

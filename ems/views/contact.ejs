@@ -1,0 +1,34 @@
+<!-- /*
+============================================
+; Title:  EMS
+; Author: Wendy Portillo
+; Date:   6 October 2019
+; Description: Contact ejs
+;===========================================
+*/
+ -->
+<!-- Header -->
+<% include header %>
+<% include navbar %>
+
+<!-- Container -->
+<div class="container">
+  <h1><%= title %></h1>
+	<form id="contact" action="https://formspree.io/dearwendy714@gmail.com" method="post">
+		<input name="_csrf" value="<%= csrfToken %>" type="hidden" />
+		<fieldset>
+			<label for="name">Name</label>
+			<input id="name" name="name" type="text" tabindex="1" required autofocus>
+			<label for="email">Email</label>
+			<input id="email" name="email" type="email" tabindex="2" required>
+			<label for="phone">Phone</label>
+			<input id="phone" name="phone" type="tel" tabindex="3" required>
+			<label for="message">Email</label>
+			<textarea id=message" name="message" tabindex="3" required></textarea>
+			<button id="contact-submit" class="btn btn-primary" name="submit" type="submit">Send</button>
+		</fieldset>
+	</form>
+</div>
+<!-- Footer -->
+<% include footer %>
+<% include scripts %>
