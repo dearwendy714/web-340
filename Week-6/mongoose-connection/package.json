@@ -3,7 +3,7 @@
   "author": "Wendy Portillo",
   "private": true,
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mongoose": "^5.7.0",
     "morgan": "^1.9.1"
   }
